@@ -784,7 +784,8 @@ function renderStatus() {
     } else if (track && !s.enabled) {
         line = 'Music is off';
     } else if (track && player.playing) {
-        line = s.auto ? `Looping. Auto mode checks the scene every ${s.autoEvery} replies.` : 'Looping';
+        const every = s.autoEvery === 1 ? 'after every reply' : `every ${s.autoEvery} replies`;
+        line = s.auto ? `Looping. Auto mode checks the scene ${every}.` : 'Looping';
     } else if (track) {
         line = 'Paused';
     }
