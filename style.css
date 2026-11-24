@@ -1,0 +1,139 @@
+.bluemetal-settings .bm-intro {
+    margin: 0 0 10px;
+    line-height: 1.45;
+}
+
+.bluemetal-settings .bm-hint {
+    display: block;
+    margin: 4px 0 8px;
+    opacity: 0.75;
+    line-height: 1.4;
+}
+
+.bluemetal-settings .bm-player {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 6px 0;
+}
+
+.bluemetal-settings .bm-player .menu_button {
+    margin: 0;
+    width: 36px;
+    height: 36px;
+    flex: 0 0 auto;
+    justify-content: center;
+}
+
+.bluemetal-settings .bm-now {
+    min-width: 0;
+    flex: 1;
+}
+
+.bluemetal-settings .bm-now-title {
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-transform: capitalize;
+}
+
+.bluemetal-settings .bm-now-sub {
+    font-size: 0.85em;
+    opacity: 0.75;
+    min-height: 1.2em;
+}
+
+.bluemetal-settings .bm-volume {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 4px 0 8px;
+}
+
+.bluemetal-settings .bm-volume input {
+    flex: 1;
+}
+
+.bluemetal-settings .bm-volume span {
+    min-width: 3em;
+    text-align: right;
+    opacity: 0.75;
+    font-size: 0.85em;
+}
+
+.bluemetal-settings .bm-score {
+    width: 100%;
+    justify-content: center;
+    margin: 4px 0 10px;
+}
+
+.bluemetal-settings .bm-auto-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 2px 0 0 24px;
+}
+
+.bluemetal-settings .bm-auto-row + .bm-hint {
+    margin-left: 24px;
+}
+
+.bluemetal-settings .bm-number {
+    width: 4.5em;
+    margin: 0;
+}
+
+.bluemetal-settings .bm-library-head {
+    margin-bottom: 6px;
+}
+
+.bluemetal-settings .bm-track {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--SmartThemeBorderColor, rgba(127, 127, 127, 0.25));
+}
+
+.bluemetal-settings .bm-track:last-child {
+    border-bottom: none;
+}
+
+.bluemetal-settings .bm-track-text {
+    min-width: 0;
+    flex: 1;
+}
+
+.bluemetal-settings .bm-track-label {
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.bluemetal-settings .bm-current .bm-track-label i {
+    font-size: 0.85em;
+}
+
+.bluemetal-settings .bm-track-prompt {
+    font-size: 0.85em;
+    opacity: 0.75;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.bluemetal-settings .bm-track-actions {
+    display: flex;
+    gap: 2px;
+    flex: 0 0 auto;
+}
+
+.bluemetal-settings .bm-track-actions .menu_button {
+    margin: 0;
+    padding: 4px 6px;
+}
+
+.bm-popup-note {
+    opacity: 0.8;
+    margin: 0 0 8px;
+}
