@@ -22,7 +22,7 @@ Requires SillyTavern 1.13.5 or newer (tested on 1.19.1). Works with any chat mod
 - **Slash command**:
   - `/bluemetal` scores the current scene.
   - `/bluemetal slow jazz piano in a rainy bar, instrumental` makes a track from your own prompt, as written.
-  - `/bluemetal stop`, `/bluemetal pause`, `/bluemetal play` control the music.
+  - `/bluemetal pause` pauses, `/bluemetal stop` turns the music off, `/bluemetal play` turns it back on.
   - Returns the generation id of the track, so it works in STscript and Quick Replies.
 
 ## Features

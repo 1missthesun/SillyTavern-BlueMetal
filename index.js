@@ -571,8 +571,7 @@ async function makeTrack(prompt, scene = {}, { quiet = false } = {}) {
         }
 
         addToLibrary(track);
-        settings().enabled = true;
-        saveSettings();
+        setEnabled(true);
         await playTrack(track);
         refreshBalance().catch(() => {});
         if (!quiet) toastr.success(track.prompt.slice(0, 140), 'BlueMetal: now playing');
@@ -744,6 +743,13 @@ function settingsHtml() {
 </div>`;
 }
 
+function setEnabled(on) {
+    if (settings().enabled === on) return;
+    settings().enabled = on;
+    $('#bm_enabled').prop('checked', on);
+    saveSettings();
+}
+
 function setNote(text) {
     job.note = text;
     renderStatus();
@@ -890,11 +896,7 @@ function bindSettings() {
             player.pause();
             return;
         }
-        if (!settings().enabled) {
-            settings().enabled = true;
-            $('#bm_enabled').prop('checked', true);
-            saveSettings();
-        }
+        setEnabled(true);
         if (player.trackId === track.id) await player.resume();
         else await playTrack(track).catch(reportError);
     });
@@ -905,9 +907,7 @@ function bindSettings() {
         .on('click', '.bm-track-play', async function () {
             const track = chatLibrary().tracks.find(t => t.id === $(this).closest('.bm-track').data('id'));
             if (!track) return;
-            settings().enabled = true;
-            $('#bm_enabled').prop('checked', true);
-            saveSettings();
+            setEnabled(true);
             await playTrack(track).catch(reportError);
             renderAll();
         })
@@ -970,6 +970,8 @@ function addSlashCommand() {
             const text = String(value ?? '').trim();
             const word = text.toLowerCase();
             if (word === 'stop') {
+                // Stop means music off, so it stays off when another chat opens.
+                setEnabled(false);
                 player.stop();
                 return '';
             }
@@ -978,6 +980,7 @@ function addSlashCommand() {
                 return player.trackId ?? '';
             }
             if (word === 'play' || word === 'resume') {
+                setEnabled(true);
                 const track = currentTrack();
                 if (track && player.trackId === track.id) await player.resume();
                 else if (track) await playTrack(track).catch(reportError);
