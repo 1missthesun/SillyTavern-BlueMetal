@@ -761,6 +761,7 @@ function renderStatus() {
     const sub = $('#bm_now_sub');
     if (!title.length) return;
 
+    title.toggleClass('bm-has-track', Boolean(track));
     if (track) {
         title.text([track.place, track.mood].filter(Boolean).join(' · ') || 'Custom track');
         title.attr('title', track.prompt);

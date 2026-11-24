@@ -35,6 +35,9 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.bluemetal-settings .bm-now-title.bm-has-track {
     text-transform: capitalize;
 }
 
